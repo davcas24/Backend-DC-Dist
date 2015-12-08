@@ -14,7 +14,7 @@ server.connection({
               }
 });
 
-mongoose.connect(' mongodb://<dbuser>:<dbpassword>@ds061474.mongolab.com:61474/dist-dc');
+mongoose.connect('mongodb://admin:admin@ds061474.mongolab.com:61474/dist-dc');
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
