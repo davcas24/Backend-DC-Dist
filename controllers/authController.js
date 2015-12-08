@@ -1,5 +1,5 @@
-var joi = require('Joi');
-var boom = require('Boom');
+var joi = require('joi');
+var boom = require('boom');
 var usuario = require('../schemas/usuario');
 var SHA3 = require("crypto-js/sha3");
 
