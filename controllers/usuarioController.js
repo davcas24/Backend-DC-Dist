@@ -26,6 +26,7 @@ exports.createusuario = {
       tel_fijo : request.payload.user_fijo,
       tabla : request.payload.user_tabla,
       zona : request.payload.user_zona
+      console.log(request.payload);
     });
     newusuario.save(function(err){
       if(err){
