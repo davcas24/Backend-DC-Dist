@@ -4,8 +4,8 @@ var boom = require("boom");
 
 exports.getusuario = {
   handler: function(request, reply){
-    var usuario = usuario.find({});
-    reply(usuario);
+    var usuarios = usuario.find({});
+    reply(usuarios);
   }
 }
 
@@ -16,17 +16,20 @@ exports.createusuario = {
       //scope: ['admin']
     },*/
   handler: function(request, reply){
+    console.log(request.payload+"llego al backend");
     var newusuario = new usuario({
-      scope : request.payload.user_user,
-      nombre : request.payload.user_name,
-      password : SHA3(request.payload.user_password),
-      direccion : request.payload.user_dire,
-      celular : request.payload.user_cel,
-      correo : request.payload.user_mail,
-      tel_fijo : request.payload.user_fijo,
-      tabla : request.payload.user_tabla,
-      zona : request.payload.user_zona
-      console.log(request.payload);
+
+      scope : request.payload.scope,
+      nombre : request.payload.nombre,
+      password: SHA3(request.payload.password),
+      direccion : request.payload.direccion,
+      celular : request.payload.celular,
+      correo: request.payload.correo,
+      tel_fijo: request.payload.tel_fijo,
+      tabla : request.payload.tabla,
+      zona : request.payload.zona
+      
+
     });
     newusuario.save(function(err){
       if(err){
