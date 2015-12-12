@@ -12,7 +12,7 @@ exports.endpoints = [{method: 'GET', path: '/{param*}', config: {handler: functi
 					 {method: 'POST', path: '/login', config: authController.login},
 					 {method: 'GET', path: '/logout', config: authController.logout},
 					 {method: 'GET', path: '/v1/inventario', config: inventarioController.getinventarioSERVER},
-			         {method: 'POST', path: '/inventario', config: inventarioController.createinventarioSERVER},
-			         {method: 'GET', path: '/v1/factura', config: facturaController.getfacturaSERVER},
-			         {method: 'POST', path: '/factura', config: facturaController.createfacturaSERVER},
-			         {method: 'PUT', path: '/v2/factura', config: facturaController.modificarfacturaSERVER}];
+			     {method: 'POST', path: '/inventario', config: inventarioController.createinventarioSERVER},
+			     {method: 'GET', path: '/factura', config: facturaController.getfacturaSERVER},
+			     {method: 'POST', path: '/factura', config: facturaController.createfacturaSERVER},
+			     {method: 'PUT', path: '/v2/factura', config: facturaController.modificarfacturaSERVER}];
