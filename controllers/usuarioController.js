@@ -9,6 +9,25 @@ exports.getusuario = {
   }
 }
 
+exports.putusuario = {
+      handler: function(request, reply){
+        console.log(request.payload+"llego al backend");
+        usuario.findById(request.payload._id,function(err,users){
+          console.log('cfdvcfefge');
+          console.log(request.payload.tabla+"dany");
+          users.tabla=request.payload.tabla;
+          users.save(function(err){
+            if(err){
+              return reply(boom.notAcceptable("Error" + err));
+            }
+            console.log('usuario saved');
+        })
+
+          return reply('ok');
+        });
+      }
+    }
+
 exports.createusuario = {
   /*auth: {
       mode:'required',
@@ -26,9 +45,9 @@ exports.createusuario = {
       celular : request.payload.celular,
       correo: request.payload.correo,
       tel_fijo: request.payload.tel_fijo,
-      tabla : request.payload.tabla,
+      tabla : [],
       zona : request.payload.zona
-      
+
 
     });
     newusuario.save(function(err){
