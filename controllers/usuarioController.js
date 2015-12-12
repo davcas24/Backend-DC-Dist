@@ -26,8 +26,8 @@ exports.createusuario = {
       celular : request.payload.celular,
       correo: request.payload.correo,
       tel_fijo: request.payload.tel_fijo,
-      tabla : [],
-      zona : request.payload.zona
+      zona : request.payload.zona,
+      tabla : []
 
 
     });
