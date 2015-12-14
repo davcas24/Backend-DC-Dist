@@ -24,3 +24,32 @@ exports.createinventarioSERVER = {
     return reply('ok');
   }
 }
+
+exports.modificarinventarioSERVER = {
+  handler: function(request, reply){
+    inventario.findOneAndUpdate(
+      {ID : request.payload.ID},
+        {Descripcion : request.payload.Descripcion,
+        Num_Original: request.payload.Num_Original,
+        Cantidad : request.payload.Cantidad,
+        Precio : request.payload.Precio},
+        function(err, inventariotodos){
+      inventariotodos.save(function(err){
+        if(err){
+          alert("Shit");
+        }
+      });
+    });
+  }
+}
+
+exports.borrarinventarioSERVER = {
+  handler: function(request, reply){
+    inventario.findOneAndRemove(
+      {ID : request.params.ID}, function(err){
+        if(err)
+          alert("Shit");
+      }
+    );
+  }
+}
