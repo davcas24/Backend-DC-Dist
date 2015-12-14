@@ -17,4 +17,4 @@ exports.endpoints = [{method: 'GET', path: '/{param*}', config: {handler: functi
 				     {method: 'PUT', path: '/v2/inventario', config: inventarioController.modificarinventarioSERVER},
 				     {method: 'DELETE', path: '/v3/inventario/{ID}', config: inventarioController.borrarinventarioSERVER},
 				     {method: 'GET', path: '/factura', config: facturaController.getfacturaSERVER},
-				     {method: 'POST', path: '/factura', config: facturaController.createfacturaSERVER};
+				     {method: 'POST', path: '/factura', config: facturaController.createfacturaSERVER}];
